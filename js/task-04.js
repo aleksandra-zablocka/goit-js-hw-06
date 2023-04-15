@@ -1,14 +1,6 @@
 "use strict";
-// let counterValue = 0;
-let counterValue = document.querySelector("#value");
-
-const decrementClick = () => {
-  counterValue -= 1;
-};
-
-const incrementClick = () => {
-  counterValue += 1;
-};
+let counterValue = 0;
+const span = document.querySelector("#value");
 
 const buttonDec = document.querySelector('button[data-action="decrement"]');
 console.log(buttonDec);
@@ -16,7 +8,15 @@ console.log(buttonDec);
 const buttonInc = document.querySelector('button[data-action="increment"]');
 console.log(buttonInc);
 
-buttonInc.addEventListener("click", incrementClick);
+const decrementClick = () => {
+  counterValue -= 1;
+  span.innerHTML = counterValue;
+};
 
-console.log(counterValue);
-console.log(counterValue.textContent);
+const incrementClick = () => {
+  counterValue += 1;
+  span.innerHTML = counterValue;
+};
+
+buttonInc.addEventListener("click", incrementClick);
+buttonDec.addEventListener("click", decrementClick);
