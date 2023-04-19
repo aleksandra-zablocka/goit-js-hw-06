@@ -10,7 +10,7 @@ function send(event) {
   } = event.currentTarget;
 
   if (email.value === "" || password.value === "") {
-    return console.log("Wszystkie pola powinny być wypełnione");
+    return alert("Wszystkie pola powinny być wypełnione");
   }
 
   const obj = {
